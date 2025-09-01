@@ -9,10 +9,13 @@ on:
 jobs:
   ml_ci_cd:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
     - name: list 
-      run: ls -la
-    - name: pip install
-      run: pip install -r requirements.txt
+      run: python --version
+   # - name: pip install
+   #   run: pip install -r requirements.txt
 
