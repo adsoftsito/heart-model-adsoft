@@ -11,5 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: python version
-      run: python --version
+    - name: list 
+      run: ls -la
+    - name: pip install
+      run: pip install -r requirements.txt
+
