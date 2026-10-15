@@ -36,14 +36,14 @@ jobs:
 #      run: docker build -t ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME}}:${{github.event.client_payload.sha}} .
     - name: show images
       run: docker images
-#    - name: docker login
-#      env:
-#        DOCKER_USER: ${{secrets.DOCKER_USER}}
-#        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-#      run: |
-#        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
-#    - name: docker- push
-#      run: docker push ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME}}:${{ github.event.client_payload.sha }}
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
+    - name: docker- push
+      run: docker push ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME}}:${{ github.event.client_payload.sha }}
 
 
 
