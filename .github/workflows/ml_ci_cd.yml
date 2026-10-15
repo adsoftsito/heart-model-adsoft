@@ -30,10 +30,10 @@ jobs:
       run: python model/train.py
     - name: list model 
       run: ls -la model
-#    - name: docker build
-#      run: docker build -t ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME}}:${{github.event.client_payload.sha}} .
-#    - name: show images
-#      run: docker images
+    - name: docker build
+      run: docker build -t ${{secrets.DOCKER_USER}}/${{secrets.MODEL_NAME}}:${{github.event.client_payload.sha}} .
+    - name: show images
+      run: docker images
 #    - name: docker login
 #      env:
 #        DOCKER_USER: ${{secrets.DOCKER_USER}}
